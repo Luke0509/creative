@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css" />
+  <title>Journaly</title>
+  </head>
+  <body>
+    <div id="app">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="#">Journaly</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <!--<li class="nav-item">
+              <a class="nav-link" href="#">Profile</a>
+            </li>-->
+          </ul>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2 text-white">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item" v-if="user">Welcome {{user.username}} <br><a class="text-white" href="#" @click="logout">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="content">
+        <form @submit="addEntry">
+          <input v-model="addedDate" type="Date" placeholder="Date">
+          <input v-model="addedTitle" placeholder="Title">
+          <br><br>
+          <textarea v-model="addedEntry" rows="15" cols="120"></textarea>
+          <br><br>
+          <button type="submit">Submit</button>
+        </form>
+        <br>
+        <h3>Entries</h3>
+        <div v-for="entry in entries">
+        <hr>
+        <div class="entry">
+          <p><i><b>{{entry.title}}</b></i></p>
+          <p><i>{{entry.date}}</i></p>
+          <div class="entryText">
+            <p>{{entry.entry}}</p>
+          </div>
+          <br>
+          <div class="delete">
+            <button @click="deleteEntry(entry)" class="delete">Delete</button>
+          </div>
+        </div>
+      </div>
+      </div>
+      <br>
+    </div>
+
+    <footer class="page-footer font-small blue pt-4 navbar-dark bg-primary">
+      <div class="footer-copyright text-center py-3 text-white">TAs:
+        <a href="https://mdbootstrap.com/education/bootstrap/" class="text-white">Github</a>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+/* Content */
+.content {
+  padding: 20px 100px 0px 100px;
+}
+
+body {
+  font-family: 'Arimo', sans-serif;
+  font-size: 16px;
+  margin: 0px;
+  background: #fff;
+}
+
+/* Entry Form */
+textarea {
+  width: 100%;
+  max-width: 1000px;
+  height: 400px;
+}
+
+input, textarea, select, button {
+  font-family: 'Arimo', sans-serif;
+  font-size: 1em;
+}
+
+button {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 32px;
+}
+
+button {
+  background-color: #EE9828;
+  color: white;
+}
+
+button:hover {
+  background-color: #C47D21;
+  color: white;
+}
+
+button.other {
+  background-color: #5271B2;
+  color: white;
+}
+
+button.other:hover {
+  background-color: #4261A2;
+  color: white;
+}
+
+button.close {
+  background-color: #aaa;
+  color: white;
+}
+
+button.close:hover {
+  background-color: #888;
+  color: white;
+}
+
+.entryText{
+  border-style: groove;
+  border-color: add8e6;
+  padding: 5px;
+}
