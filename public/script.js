@@ -9,7 +9,7 @@ var app = new Vue({
   },
   created(){
     this.getEntries();
-    this.getUser();
+    //this.getUser();
   },
   methods: {
     async getEntries() {
