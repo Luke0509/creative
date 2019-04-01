@@ -36,11 +36,13 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.delete('/:id', auth.verifyToken, async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
+    console.log("Deleting");
     await Entry.deleteOne({
       _id: req.params.id
     });
+    console.log("Success!");
     return res.sendStatus(200);
   } catch (error) {
     console.log(error);

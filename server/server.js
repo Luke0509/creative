@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
-//app.use(express.static('../public'));
+app.use(express.static('../public'));
 
 const mongoose = require('mongoose');
 
@@ -19,7 +19,7 @@ mongoose.connect('mongodb://localhost:27017/entries', {
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 
-const entries = require("/entries.js");
+const entries = require("./entries.js");
 app.use("/api/entries", entries);
 //const users = require("./users.js");
 //app.use("/api/users", users);
